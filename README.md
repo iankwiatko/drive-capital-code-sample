@@ -58,6 +58,10 @@ Time Complexity:
 
 I considered time complexity when designing any of the iterations, especially the strongest_partners function. Nearly all of the functions have a maximum runtime of O(N), with N being the length of the data structure. The worst case stems from the strongest partners, which is O(NLogN), as the sort functions add complexity. The separation of concerns helps with minimizing the average runtime, as usually each function iterates through one data structure.
 
+### Why Python
+
+I chose to use Python for this project as I felt it provided the better data manipulation compared to other languages I know such as Typescript. Pythons standard built in libraries had all the tools I needed to complete the task, while minimizing dependencies needed to run the project compared to something that would run on Node. It was also just fun to write some Python code for a change!
+
 ### Use of LLM Tools
 
 I used LLM tools in a variety of ways for this project. Copilot was my main tool, and I utilized it to help me write boilerplate code, aid with debugging, and help simplify expressions using some syntax sugar. I also used Copilot to help me identify where errors were necessary and, most importantly, to help me write test cases. However, all the main design decisions involving logic, structure, and trade-offs were made by me. Copilot is a tool, not a solution! (at least to me)
