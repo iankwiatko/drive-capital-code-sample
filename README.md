@@ -4,11 +4,11 @@ Network analyzer written for the Drive Capital coding interview!
 
 ## Table of Contents
 
-1. [Build, Run, and Test](#1-build-run-and-test)
+1. Build, Run, and Test
 
-2. [Approach and Design Decisions](#2-approach-and-design-decisions)
+2. Approach and Design Decisions
 
-3. [Assumptions](#3-assumptions)
+3. Assumptions
 
 ## 1. Build, Run, and Test
 
@@ -28,11 +28,11 @@ To run the program, simply navigate to the parent/top-level directory and input 
 
 The tests are written using Python's built-in test suite`unittest`. To run the test suite, simply input `py -m unittest -v`. This will execute all the tests. Additional documentation on how to run unittest is provided [here](https://docs.python.org/3/library/unittest.html#command-line-interface)
 
-### 2. Approach and Design Decisions
+## 2. Approach and Design Decisions
 
 ### Approach
 
-My goal with this sample program was to provide a real-life example of the engineering fundamentals I use to develop applications. Engineering to me is a delicate balance of designing the most efficient solution while also keeping things like maintainability, scalability, readability, and time complexity, along with other principles, in mind. While developing this application, many of the design choices I made were impacted by these ideas.
+My goal with this sample program was to provide a real-life example of the engineering fundamentals I use to develop applications. Engineering to me is a delicate balance of designing the most efficient solution while also keeping things like maintainability, scalability, readability, time complexity, along with other principles, in mind. While developing this application, many of the design choices I made were impacted by these ideas.
 
 To approach this problem, I initially created a diagram that helped me understand how the mock network should look and how commands interact with each other. This was followed by creating a class structure to help represent the network. This class structure helps enforce organization of data and creates reusable classes to help easily represent our commands. From here, I dissected the larger problem into smaller bits that would later become my functions. I iterated through developing each of these functions, writing unit tests along the way to make sure each one functioned properly. The most complex part of this problem for me was the relationship algorithm. It took a bit of brainstorming, but eventually I found something that I was comfortable with, and that felt balanced. To round the project out, I simply connected all the parts together, ran some end-to-end tests, and had my complete result!
 
@@ -58,20 +58,6 @@ Time Complexity
 
 I considered time complexity when designing any of the iterations, especially the strongest_partners function. Nearly all of the functions have a maximum runtime of O(N), with N being the length of the data structure. The worst case stems from the strongest partners, which is O(NLogN), as the sort functions add complexity. The separation of concerns helps with minimizing the average runtime, as usually each function iterates through one data structure.
 
-### Project Structure
-
-├── analyze_network.py # Entry point
-├── src/
-│ ├── init.py
-│ ├── build_network.py
-│ ├── commands_parser.py
-│ ├── format_relationships.py
-│ ├── input_loader.py
-│ ├── main.py
-│ ├── models.py
-│ └── strongest_partners.py
-└── test/
-
 ### Use of LLM Tools
 
 I used LLM tools in a variety of ways for this project. Copilot was my main tool, and I utilized it to help me write boilerplate code, aid with debugging, and help simplify expressions using some syntax sugar. I also used Copilot to help me identify where errors were necessary and, most importantly, to help me write test cases. However, all the main design decisions involving logic, structure, and trade-offs were made by me. Copilot is a tool, not a solution! (at least to me)
@@ -81,9 +67,11 @@ I used LLM tools in a variety of ways for this project. Copilot was my main tool
 ### Assumptions About the Input
 
 - A command consists of only the characters A-Z, in upper or lower case. _(from requirements)_
-    - To expand this, I assumed all commands and args have the same casing as in the example. Each command or arg is led by a capital letter aside from the contact types. _(my assumption)_
+
+  To expand this, I assumed all commands and args have the same casing as in the example. Each command or arg is led by a capital letter aside from the contact types. _(my assumption)_
 - The company an employee works at is declared before the employee. _(from requirements)_
-    - To expand this, I assumed employees and partners also have to be declared before a contact command**(my assumption)**
+
+  To expand this, I assumed employees and partners also have to be declared before a contact command**(my assumption)**
 - Input is well formed, with no incorrectly formatted lines. _(from requirements)_
 - I assumed there is only one input file. _(my assumption)_
 - Each interaction has the same weight, regardless of contact type. Meeting for coffee holds the same weight as an email _(my assumption)_
