@@ -26,7 +26,7 @@ To run the program, simply navigate to the parent/top-level directory and input 
 
 ### Running the tests
 
-The tests are written using Python's built-in test suite`unittest`. To run the test suite, simply input ``. This will execute all the tests. Additional documentation on how to run unittest is provided [here](https://docs.python.org/3/library/unittest.html#command-line-interface)
+The tests are written using Python's built-in test suite`unittest`. To run the test suite, simply input `py -m unittest -v`. This will execute all the tests. Additional documentation on how to run unittest is provided [here](https://docs.python.org/3/library/unittest.html#command-line-interface)
 
 ### 2. Approach and Design Decisions
 
