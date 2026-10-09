@@ -1,6 +1,7 @@
 """Determines the strongest partners for each company in the network based on the number of contacts and returns an ordered list of Relationship objects. Works by creating a Counter for each company, keeping track of connections to each partner. After counting connections, we iterate through all the companies, selecting the partner with the highest number of connections from each Counter, breaking ties alphabetically."""
 
 from collections import Counter
+
 from .models import Network, Relationship
 
 

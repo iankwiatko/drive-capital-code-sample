@@ -14,6 +14,7 @@ def run_program(input_file):
         capture_output=True,
         text=True,
         cwd=ROOT,
+        check=False,
     )
 
 

@@ -56,9 +56,8 @@ class BuildNetworkTests(unittest.TestCase):
             ],
         }
         for name, commands in cases.items():
-            with self.subTest(case=name):
-                with self.assertRaises(NetworkCreationError):
-                    build_network(commands)
+            with self.subTest(case=name), self.assertRaises(NetworkCreationError):
+                build_network(commands)
 
     def test_unrecognized_command_raises(self):
         with self.assertRaises(NetworkCreationError):

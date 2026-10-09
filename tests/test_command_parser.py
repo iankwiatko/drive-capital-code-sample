@@ -40,9 +40,8 @@ class CommandParserTests(unittest.TestCase):
             "Contact Laurie Chris email extra",
             "Contact Laurie Chris invalid",
         ):
-            with self.subTest(line=line):
-                with self.assertRaises(ValueError):
-                    parse_commands(line)
+            with self.subTest(line=line), self.assertRaises(ValueError):
+                parse_commands(line)
 
     def test_error_message_includes_the_invalid_line(self):
         with self.assertRaisesRegex(ValueError, "Vendor Acme"):
