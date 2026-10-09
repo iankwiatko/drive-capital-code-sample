@@ -50,11 +50,11 @@ Reusability:
 
 The design decision to have individual functions was impacted by wanting them to be more reusable. If another portion of the program has repeatable logic, it can be easily reused!
 
-Separation of Concerns
+Separation of Concerns:
 
 Separation of concerns impacted an initial implementation of the parser that has a list of tuples as the final output. I chose to return a list of command types instead, as this helped keep the validation in the parser. With the original tuple implementation, command validity checks were done when building a network, which muddled the lines between the functions of each. Now the parser is strictly dedicated to parsing and validating inputs, and build_network is responsible for creating the network we use.
 
-Time Complexity
+Time Complexity:
 
 I considered time complexity when designing any of the iterations, especially the strongest_partners function. Nearly all of the functions have a maximum runtime of O(N), with N being the length of the data structure. The worst case stems from the strongest partners, which is O(NLogN), as the sort functions add complexity. The separation of concerns helps with minimizing the average runtime, as usually each function iterates through one data structure.
 
